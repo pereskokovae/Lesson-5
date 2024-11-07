@@ -67,6 +67,11 @@ if __name__ == "__main__":
             "last_name": fake.last_name_female(), 
             "job": fake.job(), 
             "town": fake.city(), 
+            "strength": random.randint(1, 10),
+            "agility": random.randint(1, 10),
+            "endurance": random.randint(1, 10),
+            "intelligence": random.randint(1, 10),
+            "luck": random.randint(1, 10),
             "skill_1": skill_1, 
             "skill_2": skill_2, 
             "skill_3": skill_3 
