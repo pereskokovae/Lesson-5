@@ -41,7 +41,11 @@ def main():
             "skill_2": skill_2, 
             "skill_3": skill_3 
             } 
- 
+         file_name = "result.svg" 
+        file_name = (f'{result_file}{file_name}') 
+        folder_name = "new_folders" 
+        folder_path = os.path.join(folder_name, file_name) 
+        file_operations.render_template("charsheet.svg", folder_path, context)
  
 if __name__ == "__main__": 
     fake = Faker("ru_RU") 
@@ -123,8 +127,3 @@ if __name__ == "__main__":
         'Я': 'Я̋', 
         ' ': ' ' 
     } 
-    file_name = "result.svg" 
-    file_name = (f'{result_file}{file_name}') 
-    folder_name = "new_folders" 
-    folder_path = os.path.join(folder_name, file_name) 
-    file_operations.render_template("charsheet.svg", folder_path, context)
