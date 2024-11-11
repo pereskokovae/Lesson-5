@@ -76,17 +76,21 @@ LETTERS_MAPPING = {
     ' ': ' '
 }
 ALL_SKILLS = [
-    "Электрический выстрел", "Стремительный удар",
-    "Огненный заряд", "Ледяной удар",
-    "Стремительный прыжок", "Тайный побег"
+    "Электрический выстрел",
+    "Стремительный удар",
+    "Огненный заряд",
+    "Ледяной удар",
+    "Стремительный прыжок",
+    "Тайный побег"
 ]
 
 
 def main():
+    runic_skills = ALL_SKILLS.copy()
     for letters in LETTERS_MAPPING:
         letter = LETTERS_MAPPING[letters]
-        cyrillic_skills = all_skills.replace(letters, letter)
-    runic_skills.append(cyrillic_skills)
+        for cyrillic_skills in runic_skills:
+            cyrillic_skills = cyrillic_skills.replace(letters, letter)
     os.makedirs("new_folders", mode=0o777, exist_ok=True)
     for result_file in range(10):
         skill_sample = random.sample(cyrillic_skills, 3)
@@ -117,5 +121,4 @@ def main():
 if __name__ == "__main__":
     fake = Faker("ru_RU")
     runic_skills = []
-    all_skills = str(ALL_SKILLS)
     main()
