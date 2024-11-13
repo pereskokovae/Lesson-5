@@ -86,14 +86,14 @@ ALL_SKILLS = [
 
 
 def main():
-    runic_skills = ALL_SKILLS.copy()
-    for letters in LETTERS_MAPPING:
-        letter = LETTERS_MAPPING[letters]
-        for cyrillic_skills in runic_skills:
+    for cyrillic_skills in ALL_SKILLS:
+        for letters in LETTERS_MAPPING:
+            letter = LETTERS_MAPPING[letters]
             cyrillic_skills = cyrillic_skills.replace(letters, letter)
+            runic_skills.append(cyrillic_skills)
     os.makedirs("new_folders", mode=0o777, exist_ok=True)
     for result_file in range(10):
-        skill_sample = random.sample(cyrillic_skills, 3)
+        skill_sample = random.sample(runic_skills, 3)
         skill_1 = skill_sample[0]
         skill_2 = skill_sample[1]
         skill_3 = skill_sample[2]
