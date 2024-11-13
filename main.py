@@ -90,7 +90,7 @@ def main():
         for letters in LETTERS_MAPPING:
             letter = LETTERS_MAPPING[letters]
             cyrillic_skills = cyrillic_skills.replace(letters, letter)
-            runic_skills.append(cyrillic_skills)
+        runic_skills.append(cyrillic_skills)
     os.makedirs("new_folders", mode=0o777, exist_ok=True)
     for result_file in range(10):
         skill_sample = random.sample(runic_skills, 3)
