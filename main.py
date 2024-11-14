@@ -86,6 +86,8 @@ ALL_SKILLS = [
 
 
 def main():
+    fake = Faker("ru_RU")
+    runic_skills = []
     for cyrillic_skills in ALL_SKILLS:
         for letters in LETTERS_MAPPING:
             letter = LETTERS_MAPPING[letters]
@@ -119,6 +121,4 @@ def main():
 
 
 if __name__ == "__main__":
-    fake = Faker("ru_RU")
-    runic_skills = []
     main()
